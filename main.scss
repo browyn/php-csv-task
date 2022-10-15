@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+// Variables
+
+$black: rgba(25, 25, 25, 0.8);
+$white: rgba(225, 225, 225, 0.8);
+
+@function space($num) {
+    @return $num * 8px;
+}
+
+@mixin flex($gap: initial, $direction: initial, $align: initial, $justify: initial) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100%;
+}
+
+
+a {
+    text-decoration: none;
+    transition: ease 0.3s;
+    color: $black;
+
+    &:hover {
+        color: rgba(25, 25, 25, 0.3);
+    }
+}
+
+%con {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    padding: space(2) space(3);
+}
+
+%label {
+    color: $black
+}
+
+%input {
+    border: 1px solid $black;
+    padding: space(1);
+    border-radius: 5px;
+    height: 40px;
+    outline: none;
+
+    &::placeholder {
+        color: $black;
+    }
+}
+
+%button {
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    color: $white;
+    cursor: pointer;
+    background: $black;
+    transition: ease 0.3s;
+
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+
+
+// header styling
+
+.auth-header {
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: 1;
+    background: $black;
+
+    .auth-header-container {
+        @extend %con;
+
+        .auth-options {
+            text-align: right;
+            @include flex($align: center, $gap: space(3));
+
+            p {
+                color: $white;
+            }
+        }
+    }
+}
+
+
+// auth register styling
+
+.auth-register {
+    height: 100vh;
+    margin-top: 120px;
+
+
+    .auth-register-container {
+        @extend %con;
+        height: 100%;
+        @include flex($align: center, $justify: center);
+
+        .auth-register-form {
+            width: 100%;
+            max-width: 575px;
+            background: white;
+            padding: space(3);
+            border-radius: 15px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+            @include flex($direction: column, $gap: space(3));
+
+            h1 {
+                text-align: center;
+            }
+
+            .name-con,
+            .others-con {
+                @include flex($gap: space(2));
+
+                .input-group {
+                    flex: 50%;
+
+                    input {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .input-group {
+                @include flex($direction: column, $gap: space(2));
+
+                label {
+                    @extend %label;
+                }
+
+                input {
+                    @extend %input;
+                }
+            }
+
+            button {
+                @extend %button;
+            }
+        }
+    }
+}

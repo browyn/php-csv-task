@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <title>Php registration form task from Zuri by Browyn Louis</title>
+</head>
+
+<body>
+    <header>
+        <div class="auth-header">
+            <div class="auth-header-container">
+                <div class="auth-options">
+                    <p><strong>Register an account</strong></p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main content -->
+    <main>
+        <div class="auth-register">
+            <div class="auth-register-container">
+                <form action="user_data.php" method="post" class="auth-register-form">
+                    <h1>New to Zuri?</h1>
+                    <div class="input-group">
+                        <label for="fname">Name</label>
+                        <input type="text" placeholder="Full Name" required id="fname" name="fname">
+                    </div>
+                    <div class="input-group">
+                        <label for="gender">Gender</label>
+                        <select name="gender" id="gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" placeholder="Your email" id="email" name="email" required>
+                    </div>
+                    <div class="others-con">
+                        <div class="input-group">
+                            <label for="dob">Date Of Birth</label>
+                            <input type="date" placeholder="dd/mm/yyyy" id="dob" name="dob" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="country">Country</label>
+                            <input type="country" placeholder="Country" id="country" name="country" required>
+                        </div>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
